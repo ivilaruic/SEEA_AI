@@ -1,0 +1,28 @@
+# SEEA-AI validation sites (bounding boxes: [west, south, east, north], EPSG:4326)
+sites:
+  - name: Murrumbidgee        # Australia — CSIRO Murray-Darling Basin reference region
+    bbox: [144.0, -35.5, 146.5, -34.0]
+    role: reference            # used for calibration against CSIRO experimental accounts
+    country: Australia
+  - name: Rio_Sinu            # Colombia — primary empirical case (Mandle et al., 2025)
+    bbox: [-76.5, 8.0, -75.0, 9.5]
+    role: transfer
+    country: Colombia
+  - name: Magdalena_Medio     # Colombia — second transfer basin
+    bbox: [-74.8, 6.0, -73.2, 8.0]
+    role: transfer
+    country: Colombia
+  - name: Myanmar             # SE Asia — independent transfer / generalisation test
+    bbox: [95.0, 20.0, 97.0, 22.0]
+    role: transfer
+    country: Myanmar
+
+# Analysis epochs
+epochs: [2020, 2026]
+
+# Economic parameters (base scenario)
+economics:
+  carbon_price_usd_per_tco2: 25.0      # World Bank (2024) reference order of magnitude
+  sediment_unit_value_usd_per_t: 18.0  # avoided water-treatment cost
+  discount_rate: 0.03                  # base; sensitivity uses 0.015 / 0.06
+  biomass_to_carbon_fraction: 0.47     # IPCC default

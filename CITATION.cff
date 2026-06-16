@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+title: "SEEA-AI — Natural-capital accounting from AI and remote sensing"
+message: "If you use this repository, please cite the article and this software."
+type: software
+authors:
+  - family-names: Vilar Ramírez
+    given-names: Ivan
+  - family-names: González
+    given-names: María Fernanda
+  - family-names: Bastons Prat
+    given-names: Miquel
+repository-code: "https://github.com/ivilaruic/SEEA_AI"
+license: MIT
+version: 1.0.0
+date-released: 2026-06-15
+preferred-citation:
+  type: article
+  title: "SEEA-AI: A new model for quantifying natural capital using AI and remote sensing"
+  authors:
+    - family-names: Vilar Ramírez
+      given-names: Ivan
+    - family-names: González
+      given-names: María Fernanda
+    - family-names: Bastons Prat
+      given-names: Miquel
+  journal: "Ecosystem Services (submitted)"
+  year: 2026
