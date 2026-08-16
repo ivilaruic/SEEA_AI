@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-title: "SEEA-AI — Natural-capital accounting from AI and remote sensing"
+title: "SEEA-AI: An integrated Earth-observation and machine-learning architecture for ecosystem-condition accounting and carbon-stock exposure"
 message: "If you use this repository, please cite the article and this software."
 type: software
 authors:
@@ -11,11 +11,11 @@ authors:
     given-names: Miquel
 repository-code: "https://github.com/ivilaruic/SEEA_AI"
 license: MIT
-version: 1.0.0
-date-released: 2026-06-15
+version: 1.1.0
+date-released: 2026-08-16
 preferred-citation:
   type: article
-  title: "SEEA-AI: A new model for quantifying natural capital using AI and remote sensing"
+  title: "SEEA-AI: An integrated Earth-observation and machine-learning architecture for ecosystem-condition accounting and carbon-stock exposure"
   authors:
     - family-names: Vilar Ramírez
       given-names: Ivan
