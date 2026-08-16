@@ -28,6 +28,3 @@
 - **47 M USD (Sinú) / 586 M USD (Alto Madre de Dios) = one-off localized carbon-stock
   loss** (deforestation), NOT an annual flow → not capitalized (Sinú sensitivity 32–66 M USD).
 - **Soil carbon** is not retrievable from Sentinel (use SoilGrids/SLGA).
-
-## Suggested release
-Tag `v1.0-paper-submission` and archive on Zenodo for a citable DOI; add the DOI here.
