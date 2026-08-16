@@ -11,6 +11,8 @@
    - `validation_murray.js`   → Murray–Darling 2018-19 vs Smith et al. 2025
    - `rf_biomass_mdb_to_sinu.js` (set ADD_SINU_TRAINING=true for Sinú values)
    - `validation_sinu.js`     → río Sinú dry-season composites 2019-20 / 2023-24
+   - `rf_biomass_mdb_to_madrededios.js` (set ADD_MDD_TRAINING=true for Alto Madre de Dios values)
+   - `validation_madre_de_dios.js` → Alto Madre de Dios dry-season composites (see results/VALIDATION_RESULTS.md for periods)
 4. Compare the console with `results/VALIDATION_RESULTS.md` (verifiable table).
 
 ## Caveats baked into the analysis (read before citing numbers)
@@ -22,9 +24,9 @@
   contrast, weak as absolute financial inventory. Random pixel split → optimistic
   (no spatial-block CV yet).
 - **Murray–Darling is a methodological-coherence benchmark**, not a direct empirical
-  validation of the tropical Sinú application.
-- **47 M USD = one-off localized carbon-stock loss** (deforestation), NOT an annual
-  flow → not capitalized (sensitivity 32–66 M USD).
+  validation of the tropical application basins.
+- **47 M USD (Sinú) / 586 M USD (Alto Madre de Dios) = one-off localized carbon-stock
+  loss** (deforestation), NOT an annual flow → not capitalized (Sinú sensitivity 32–66 M USD).
 - **Soil carbon** is not retrievable from Sentinel (use SoilGrids/SLGA).
 
 ## Suggested release
