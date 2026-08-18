@@ -26,10 +26,9 @@ def _load_config(path):
             "sites": [
                 {"name": "Murrumbidgee", "bbox": [144.0, -35.5, 146.5, -34.0], "role": "reference"},
                 {"name": "Rio_Sinu", "bbox": [-76.5, 8.0, -75.0, 9.5], "role": "transfer"},
-                {"name": "Magdalena_Medio", "bbox": [-74.8, 6.0, -73.2, 8.0], "role": "transfer"},
-                {"name": "Myanmar", "bbox": [95.0, 20.0, 97.0, 22.0], "role": "transfer"},
+                {"name": "Alto_Madre_de_Dios", "bbox": [-72.2, -14.0, -69.8, -11.6], "role": "transfer"},
             ],
-            "epochs": [2020, 2026],
+            "epochs": [2020, 2024],
             "economics": {"carbon_price_usd_per_tco2": 25.0,
                           "sediment_unit_value_usd_per_t": 18.0,
                           "discount_rate": 0.03, "biomass_to_carbon_fraction": 0.47},
