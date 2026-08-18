@@ -53,7 +53,7 @@ def offline_sample(bbox, year, site_name, size=256, seed=None):
 
     The generator encodes coarse, site-specific land-cover structure (river
     corridors, forest blocks, cleared patches) and a year effect so that NDVI
-    deltas 2020->2026 are realistic in sign/magnitude. NOT real observations —
+    deltas 2020->2024 are realistic in sign/magnitude. NOT real observations —
     intended only to exercise the pipeline reproducibly. Flagged as
     source='offline_sample'.
     """
@@ -71,8 +71,8 @@ def offline_sample(bbox, year, site_name, size=256, seed=None):
                   + np.roll(forest, 1, 1) + np.roll(forest, -1, 1)) / 5.0
     forest = (forest - forest.min()) / (np.ptp(forest) + 1e-9)
     ndvi = np.clip(base * (0.6 + 0.6 * forest) - 0.8 * river, -0.1, 0.92)
-    # year effect: net degradation (deforestation/fire) intensifies by 2026
-    if year >= 2026:
+    # year effect: net degradation (deforestation/fire) intensifies by 2024
+    if year >= 2024:
         deg = (forest < np.quantile(forest, 0.28)) | (rng.random((size, size)) < 0.05)
         ndvi = np.where(deg, ndvi * rng.uniform(0.45, 0.7, (size, size)), ndvi * 0.98)
     # back out plausible red/nir from NDVI
