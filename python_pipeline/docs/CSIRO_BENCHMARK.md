@@ -15,7 +15,7 @@ condition convention, service set), not for direct transfer of monetary values
 | Accounts compiled | extent, condition, biodiversity, services | extent, condition, physical & monetary flows, assets | ✔ |
 | Services | carbon storage/seq., water & sediment retention, biomass, recreation | carbon, sediment retention (extensible) | ✔ subset |
 | Spatial unit | basin / ecosystem type | gridded bbox aggregated to territory | ✔ |
-| Temporal | annual financial-year accounts | annual epochs (2020, 2026) | ✔ |
+| Temporal | annual financial-year accounts | annual epochs (2020, 2024) | ✔ |
 | Biodiversity trend (MDB) | plant persistence 86.8%→87.1% (2010–15) | not modelled (out of scope) | n/a |
 
 **Validation logic.** SEEA-AI must (i) reproduce the *functional* relationship
@@ -23,4 +23,5 @@ condition → service flow → value, (ii) keep estimated values within the orde
 magnitude expected for landscapes of comparable extent and condition, and
 (iii) preserve the SEEA-EA accounting identities (assets = NPV of flows; ΔK as
 depreciation/accumulation). The Murrumbidgee run is the calibration anchor; the
-three transfer sites test generalisation without site-specific recalibration.
+two application sites (Rio_Sinu, Alto_Madre_de_Dios) test generalisation
+without site-specific recalibration.
