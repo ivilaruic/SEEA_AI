@@ -8,17 +8,16 @@ sites:
     bbox: [-76.5, 8.0, -75.0, 9.5]
     role: transfer
     country: Colombia
-  - name: Magdalena_Medio     # Colombia — second transfer basin
-    bbox: [-74.8, 6.0, -73.2, 8.0]
+  - name: Alto_Madre_de_Dios  # Peru — second empirical case (Amazon tributary, Manu/Madre de Dios)
+    bbox: [-72.2, -14.0, -69.8, -11.6]  # approximate bounding box for this simplified offline
+                                         # demo only; the precise boundary used for the published
+                                         # results is the HydroBASINS hybas_8 Pfafstetter-prefix
+                                         # match (~35,183 km2) in gee/validation_madre_de_dios.js
     role: transfer
-    country: Colombia
-  - name: Myanmar             # SE Asia — independent transfer / generalisation test
-    bbox: [95.0, 20.0, 97.0, 22.0]
-    role: transfer
-    country: Myanmar
+    country: Peru
 
 # Analysis epochs
-epochs: [2020, 2026]
+epochs: [2020, 2024]
 
 # Economic parameters (base scenario)
 economics:
