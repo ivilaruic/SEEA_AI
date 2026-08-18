@@ -30,16 +30,15 @@ var hb8 = ee.FeatureCollection('WWF/HydroSHEDS/v1/Basins/hybas_8')
 var mddSeed = ee.Feature(hb8.filterBounds(ee.Geometry.Point([-71.0, -12.8])).first());
 var seedPfaf = ee.String(mddSeed.get('PFAF_STR'));
 
-// TODO (verify/tune): PREFIX_LEN controls how many leading Pfafstetter digits
-// must match to be included. Longer prefix -> smaller, more local selection.
-// Run 1 (PREFIX_LEN=6) printed 125,554 km2 — still ~8x the target, so one
-// more digit is needed (each extra digit roughly divides area by ~10). If 7
-// overshoots below target, drop back to 6 mixed with a manual sub-filter, or
-// try 8.
+// PREFIX_LEN controls how many leading Pfafstetter digits must match to be
+// included. Longer prefix -> smaller, more local selection. Tuning log:
+// PREFIX_LEN=6 -> 125,554 km2 (still ~8x too large); PREFIX_LEN=7 ->
+// ~35,183 km2 (adopted — matches validation_madre_de_dios.js and
+// VALIDATION_RESULTS.md).
 var PREFIX_LEN = 7;
 var seedPrefix = seedPfaf.slice(0, PREFIX_LEN);
 var mdd = hb8.filter(ee.Filter.stringStartsWith('PFAF_STR', seedPrefix));
-print('MdD candidate area km2 (target ~15,600) — tune PREFIX_LEN if off by a lot',
+print('MdD candidate area km2 (adopted: PREFIX_LEN=7 -> ~35,183 km2, see VALIDATION_RESULTS.md)',
   mdd.geometry().area(1).divide(1e6));
 
 // ----- Cloud-masked Sentinel-2 mean composite (identical to rf_true) -----
