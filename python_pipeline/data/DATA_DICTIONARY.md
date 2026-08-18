@@ -5,7 +5,7 @@ Each `*_account.json` / row of `accounts_summary.csv` contains:
 | Field | Unit | SEEA-EA account | Description |
 |---|---|---|---|
 | site | – | – | Site name |
-| year_open / year_close | year | – | Accounting period bounds (2020 → 2026) |
+| year_open / year_close | year | – | Accounting period bounds (2020 → 2024) |
 | source | – | – | EO source: `stac:sentinel-2-l2a`, `gee`, or `offline_sample` |
 | extent_ha | ha | Extent | Total analysed area |
 | cond_open / cond_close | index 0–1 | Condition | Territorial mean ecosystem condition C̄ |
