@@ -45,32 +45,22 @@ python -m seea_ai.run --backend offline --ai numpy --out results
 
 Outputs per site: `results/<site>_account.json`, `results/accounts_summary.csv`,
 `results/ai_metrics.csv`, and figures `results/figures/<site>_<year>_raw.png`
-(true-colour) and `_processed.png` (condition C).
-
-## Real imagery for the figures
-
-Two routes:
-
-1. **Sentinel-2 (recommended, cloud-free):** `--backend stac` builds a yearly
-   median composite per bbox and writes the raw + processed PNGs automatically.
-2. **NASA Worldview / GIBS quick-look:** ready-to-open snapshot URLs for all 12
-   images (raw true-colour + NDVI, 2020 & 2024, 3 sites) are in
-   [`docs/image_urls.md`](docs/image_urls.md). Save them into `data/imagery/`.
+(true-colour) and `_processed.png` (condition C). Figures are generated
+locally when you run the pipeline; they are not committed to the repository.
 
 ## Module map
 
 ```
 src/seea_ai/
-  fetch.py            EO acquisition (STAC / GEE) + deterministic offline sample
-  indices.py          NDVI, NDWI, SEEA-EA condition index C∈[0,1]
-  condition_model.py  Random Forest (sklearn) + pure-numpy fallback; R²/RMSE
-  accounting.py       extent, condition, carbon & sediment flows, valuation, ΔK
-  run.py              end-to-end driver + figure export
-  figure_urls.py      generates docs/image_urls.md
-config/sites.yaml     sites, epochs, economic parameters
-notebooks/demo.ipynb  guided walkthrough
+fetch.py EO acquisition (STAC / GEE) + deterministic offline sample
+indices.py NDVI, NDWI, SEEA-EA condition index C∈[0,1]
+condition_model.py Random Forest (sklearn) + pure-numpy fallback; R²/RMSE
+accounting.py extent, condition, carbon & sediment flows, valuation, ΔK
+run.py end-to-end driver + figure export
+config/sites.yaml sites, epochs, economic parameters
+notebooks/demo.ipynb guided walkthrough
 data/DATA_DICTIONARY.md
-docs/CSIRO_BENCHMARK.md  structural validation against CSIRO MDB accounts
+docs/CSIRO_BENCHMARK.md structural validation against CSIRO MDB accounts
 ```
 
 ## CSIRO benchmark
