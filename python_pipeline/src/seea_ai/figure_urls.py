@@ -5,15 +5,13 @@ run.py --backend stac. Run:  python -m seea_ai.figure_urls  > docs/image_urls.md
 SITES = {
     "Murrumbidgee": [144.0, -35.5, 146.5, -34.0],
     "Rio_Sinu": [-76.5, 8.0, -75.0, 9.5],
-    "Magdalena_Medio": [-74.8, 6.0, -73.2, 8.0],
-    "Myanmar": [95.0, 20.0, 97.0, 22.0],
+    "Alto_Madre_de_Dios": [-72.2, -14.0, -69.8, -11.6],
 }
 # Dry-season anchor dates (low cloud) per hemisphere/site
 DATES = {
-    "Murrumbidgee": {2020: "2020-01-15", 2026: "2026-01-15"},  # AU summer
-    "Rio_Sinu": {2020: "2020-02-15", 2026: "2026-02-15"},       # CO dry season
-    "Magdalena_Medio": {2020: "2020-02-15", 2026: "2026-02-15"},
-    "Myanmar": {2020: "2020-02-15", 2026: "2026-02-15"},        # Myanmar dry season
+    "Murrumbidgee": {2020: "2020-01-15", 2024: "2024-01-15"},  # AU summer
+    "Rio_Sinu": {2020: "2020-02-15", 2024: "2024-02-15"},       # CO dry season
+    "Alto_Madre_de_Dios": {2020: "2020-08-15", 2024: "2024-08-15"},  # Amazonian dry season (Jun-Sep)
 }
 BASE = "https://wvs.earthdata.nasa.gov/api/v1/snapshot"
 TRUE = "MODIS_Terra_CorrectedReflectance_TrueColor"
@@ -33,7 +31,7 @@ if __name__ == "__main__":
           "`python -m seea_ai.run --backend local-imagery`.\n")
     for site, bbox in SITES.items():
         print(f"## {site}  bbox={bbox}")
-        for yr in (2020, 2026):
+        for yr in (2020, 2024):
             d = DATES[site][yr]
             print(f"- {yr} RAW (true colour): {url(bbox, d, TRUE)}")
             print(f"- {yr} PROCESSED (NDVI): {url(bbox, d, NDVI)}")
