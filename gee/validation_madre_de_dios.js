@@ -26,7 +26,7 @@ var PREFIX_LEN = 7;   // matches rf_madre_de_dios.js run 2 (run 1 @ 6 gave 125,5
 var seedPrefix = seedPfaf.slice(0, PREFIX_LEN);
 var mdd = hb8.filter(ee.Filter.stringStartsWith('PFAF_STR', seedPrefix));
 var aoi = mdd.geometry();
-print('MdD basin area km2 (target ~15,600) — tune PREFIX_LEN if off by a lot',
+print('MdD basin area km2 (adopted: PREFIX_LEN=7 -> ~35,183 km2, see VALIDATION_RESULTS.md)',
   aoi.area(1).divide(1e6));
 Map.centerObject(mdd, 8);
 Map.addLayer(mdd, {color: 'orange'}, 'Madre de Dios boundary', false);
