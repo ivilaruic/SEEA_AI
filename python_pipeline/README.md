@@ -2,9 +2,10 @@
 
 Reference implementation accompanying:
 
-> Vilar Ramirez, I., González, M. F., Bastons Prat, M. (2026). *SEEA-AI: A new
-> model for quantifying natural capital and its environmental-economic impact
-> using AI and remote sensing.* Submitted to **Ecosystem Services** (Elsevier).
+> Vilar Ramírez, I., González, M. F., Bastons Prat, M. (2026). *SEEA-AI: An
+> integrated Earth-observation and machine-learning architecture for
+> ecosystem-condition accounting and carbon-stock exposure.* Submitted to
+> **Ecosystem Services** (Elsevier).
 
 SEEA-AI links Earth observation, a supervised condition model, and the SEEA-EA
 accounting structure (extent → condition → physical flows → monetary flows →
@@ -16,10 +17,14 @@ assets) into one reproducible stock–flow–value pipeline.
 |---|---|---|---|
 | Murrumbidgee | Australia | reference (CSIRO MDB) | `144.0, -35.5, 146.5, -34.0` |
 | Rio_Sinu | Colombia | primary case | `-76.5, 8.0, -75.0, 9.5` |
-| Magdalena_Medio | Colombia | transfer | `-74.8, 6.0, -73.2, 8.0` |
-| Myanmar | Myanmar | transfer | `95.0, 20.0, 97.0, 22.0` |
+| Alto_Madre_de_Dios | Peru | second application case | `-72.2, -14.0, -69.8, -11.6` |
 
-Epochs: **2020 → 2026**.
+Epochs: **2020 → 2024**.
+
+> The `Alto_Madre_de_Dios` bbox above is a simplified bounding-box
+> approximation used only by this offline demo pipeline. The basin boundary
+> used for the published results is a HydroBASINS `hybas_8` Pfafstetter-prefix
+> match (≈35,183 km²) — see `gee/validation_madre_de_dios.js` in the repo root.
 
 ## Install
 
@@ -48,8 +53,8 @@ Two routes:
 
 1. **Sentinel-2 (recommended, cloud-free):** `--backend stac` builds a yearly
    median composite per bbox and writes the raw + processed PNGs automatically.
-2. **NASA Worldview / GIBS quick-look:** ready-to-open snapshot URLs for all 16
-   images (raw true-colour + NDVI, 2020 & 2026, 4 sites) are in
+2. **NASA Worldview / GIBS quick-look:** ready-to-open snapshot URLs for all 12
+   images (raw true-colour + NDVI, 2020 & 2024, 3 sites) are in
    [`docs/image_urls.md`](docs/image_urls.md). Save them into `data/imagery/`.
 
 ## Module map
